@@ -104,7 +104,7 @@ def split_dataset(X , y):
 
 
 # Create the Functions for Appling the Model
-def model_development(x_train , x_test , y_train , y_test):
+def model_development(x_train , x_test , y_train , y_test , dataset):
     
      # Create the Experiment
     experimentName = mlflow.set_experiment("FraudDetectionProject")
@@ -113,20 +113,47 @@ def model_development(x_train , x_test , y_train , y_test):
     with mlflow.start_run(run_name = "Logostic Regression" , nested = True):
 
         with mlflow.start_run(run_name = "Model Detail" , nested = True):
-
             # Create the Model Object
             lg = LogisticRegression()
-            
             # Fit the Model in the Training Dataset
             lg.fit(x_train , y_train)
-
             # Predict the Result
             prediction = lg.predict(x_test)
-
             acc = accuracy_score(y_test , prediction)
-
             # Save the Model Metrics
             mlflow.log_metric("Accuracy Score" , acc)
 
+        # Save the Information about the Dataset
+        with mlflow.start_run(run_name = "Dataset Information" , nested = True):
+
+            # Save the Training Dataset
+            with mlflow.start_run(run_name = "Training Dataset" , nested = True):
+                # Save the X Training Dataset
+                with mlflow.start_run(run_name = "X Train Dataset" , nested = True):
+                    # Save the X Train Dataset
+                    X_train_df = pd.DataFrame(x_train, columns=dataset.columns[:-1])
+                    X_train_df.to_csv("../Dataset/X_train.csv", index=False)
+                    mlflow.log_artifact("../Dataset/X_train.csv" , artifact_path ="x_traing_dataset")
+                # Save the Y Training Dataset
+                with mlflow.start_run(run_name = "Y Train Dataset" , nested = True):
+                    # Save the Y Train Dataset
+                    y_train_df = pd.DataFrame(y_train, columns=["Fraud"])   
+                    y_train_df.to_csv("../Dataset/y_train.csv", index=False)
+                    mlflow.log_artifact("../Dataset/y_train.csv" , artifact_path ="y_traing_dataset")
+
+            # Save the Testing Dataset
+            with mlflow.start_run(run_name = "Testing Dataset" , nested = True):
+                # Save the X Testing Dataset
+                with mlflow.start_run(nested = True , run_name = "X Test Dataset"):
+                    # Save the X Test Dataset
+                    X_test_df = pd.DataFrame(x_test, columns=dataset.columns[:-1])
+                    X_test_df.to_csv("../Dataset/X_test.csv", index=False)
+                    mlflow.log_artifact("../Dataset/X_test.csv" , artifact_path ="x_testing_dataset")
+                # Save the Y Testing Dataset
+                with mlflow.start_run(nested = True , run_name = "Y Test Dataset"):
+                    # Save the X Test Dataset
+                    y_test_df = pd.DataFrame(y_test, columns=["Fraud"])
+                    y_test_df.to_csv("../Dataset/y_test.csv", index=False)
+                    mlflow.log_artifact("../Dataset/y_test.csv" , artifact_path ="y_testing_dataset")
     return acc
 

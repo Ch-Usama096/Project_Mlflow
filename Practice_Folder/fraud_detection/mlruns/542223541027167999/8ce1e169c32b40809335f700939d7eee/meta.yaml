@@ -1,0 +1,16 @@
+artifact_uri: file:///E:/MLFLOW/Practice_Folder/fraud_detection/mlruns/542223541027167999/8ce1e169c32b40809335f700939d7eee/artifacts
+deleted_time: 1731615013296
+end_time: 1731614843526
+entry_point_name: ''
+experiment_id: '542223541027167999'
+lifecycle_stage: deleted
+run_id: 8ce1e169c32b40809335f700939d7eee
+run_name: Dataset Information
+run_uuid: 8ce1e169c32b40809335f700939d7eee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731614843324
+status: 3
+tags: []
+user_id: User26324

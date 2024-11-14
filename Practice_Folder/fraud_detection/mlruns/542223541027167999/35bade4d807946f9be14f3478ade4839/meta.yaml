@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/MLFLOW/Practice_Folder/fraud_detection/mlruns/542223541027167999/35bade4d807946f9be14f3478ade4839/artifacts
+end_time: 1731615619453
+entry_point_name: ''
+experiment_id: '542223541027167999'
+lifecycle_stage: active
+run_id: 35bade4d807946f9be14f3478ade4839
+run_name: X Test Dataset
+run_uuid: 35bade4d807946f9be14f3478ade4839
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731615619216
+status: 3
+tags: []
+user_id: User26324

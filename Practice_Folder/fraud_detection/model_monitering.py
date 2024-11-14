@@ -106,23 +106,27 @@ def split_dataset(X , y):
 # Create the Functions for Appling the Model
 def model_development(x_train , x_test , y_train , y_test):
     
+     # Create the Experiment
+    experimentName = mlflow.set_experiment("FraudDetectionProject")
+
     # Track the Model Training  & Save in the MLFLOW
-    with mlflow.start_run():
+    with mlflow.start_run(run_name = "Logostic Regression" , nested = True):
 
-    # with mlflow.start_run(run_name = "logistic Regression"):
+        with mlflow.start_run(run_name = "Model Detail" , nested = True):
 
-        # Create the Model Object
-        lg = LogisticRegression()
-        
-        # Fit the Model in the Training Dataset
-        lg.fit(x_train , y_train)
+            # Create the Model Object
+            lg = LogisticRegression()
+            
+            # Fit the Model in the Training Dataset
+            lg.fit(x_train , y_train)
 
-        # Predict the Result
-        prediction = lg.predict(x_test)
-        
-        acc = accuracy_score(y_test , prediction)
+            # Predict the Result
+            prediction = lg.predict(x_test)
 
-        # Save the Model Metrics
-        mlflow.log_metric("Accuracy Score" , acc)
+            acc = accuracy_score(y_test , prediction)
 
+            # Save the Model Metrics
+            mlflow.log_metric("Accuracy Score" , acc)
+
+    return acc
 

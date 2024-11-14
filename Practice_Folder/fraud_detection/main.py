@@ -8,8 +8,7 @@ import mlflow
 # Run the Main  (For the Runing Project)
 if __name__ == "__main__":
     
-    # Create the Experiment
-    mlflow.set_experiment("FraudDetection")
+    
 
 
     # Define the DATASET PATH
@@ -43,4 +42,5 @@ if __name__ == "__main__":
     models_acc = model_development(x_train , x_test , y_train , y_test)
     # Display the Accuracy
     print(f"Here is the Accuracy of the Models : {models_acc}")
+
 

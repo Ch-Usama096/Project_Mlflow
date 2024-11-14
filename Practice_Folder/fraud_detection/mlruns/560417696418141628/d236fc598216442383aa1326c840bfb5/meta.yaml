@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/MLFLOW/Practice_Folder/fraud_detection/mlruns/560417696418141628/d236fc598216442383aa1326c840bfb5/artifacts
+end_time: 1731592898777
+entry_point_name: ''
+experiment_id: '560417696418141628'
+lifecycle_stage: active
+run_id: d236fc598216442383aa1326c840bfb5
+run_name: chill-chimp-184
+run_uuid: d236fc598216442383aa1326c840bfb5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731592898746
+status: 3
+tags: []
+user_id: '24740'

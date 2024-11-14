@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/MLFLOW/Practice_Folder/fraud_detection/mlruns/0/ed25d9444f00445fba7ec4b230096f5e/artifacts
+end_time: 1731592245451
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ed25d9444f00445fba7ec4b230096f5e
+run_name: Model Tracking
+run_uuid: ed25d9444f00445fba7ec4b230096f5e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731592245436
+status: 4
+tags: []
+user_id: '24740'

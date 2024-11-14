@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/MLFLOW/Practice_Folder/fraud_detection/mlruns/0/b1cf1414688b4fbf954e87813067b115/artifacts
+end_time: 1731592771929
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b1cf1414688b4fbf954e87813067b115
+run_name: silent-shrike-711
+run_uuid: b1cf1414688b4fbf954e87813067b115
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731592771898
+status: 3
+tags: []
+user_id: '24740'

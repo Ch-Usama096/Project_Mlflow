@@ -10,6 +10,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 
+import mlflow
+
 
 # Ingore the Warnings
 warnings.simplefilter(action='ignore', category=DataConversionWarning)
@@ -87,7 +89,7 @@ def preprocessing(X , y):
 # Create the Function for Splitting the Dataset into Training & Testing
 def split_dataset(X , y):
     # Split the Dataset into Training & Testing 
-    x_train , y_train , x_test , y_test = train_test_split(X , y , test_size = 0.25 , random_state = 42)
+    x_train , x_test , y_train , y_test = train_test_split(X , y , test_size = 0.25 , random_state = 42)
 
     # # Display the Shape of the Training and Testing 
     # print(f"Here is the Shape of the X Train : {x_train.shape}")
@@ -96,33 +98,31 @@ def split_dataset(X , y):
     # print(f"Here is the Shape of the Y Test  : {y_test.shape}")
 
     # Return the training and Testing Data
-    return x_train , y_train , x_test , y_test
+    return x_train , x_test , y_train , y_test
+
+
 
 
 # Create the Functions for Appling the Model
-def model_development(x_train , y_train , x_test , y_test):
-    # Create the Object of the Models
-    lg = LogisticRegression()
-    dt = DecisionTreeClassifier()
+def model_development(x_train , x_test , y_train , y_test):
+    
+    # Track the Model Training  & Save in the MLFLOW
+    with mlflow.start_run():
 
-    # Create the List for Define the Model Name
-    models = [lg , dt]
+    # with mlflow.start_run(run_name = "logistic Regression"):
 
-    # Craete the List for Stroing the model
-    models_acc = []
-    for model in models:
-        # Fit the Model in the Train Dataset for Training the Model
-        model.fit(x_train , x_test)
+        # Create the Model Object
+        lg = LogisticRegression()
+        
+        # Fit the Model in the Training Dataset
+        lg.fit(x_train , y_train)
 
-        # Predict the Model in the Testing Dataset fro Checking the Model
-        prediction = model.predict(y_train)
-
-        # Calculate the Accuracy of the Model
+        # Predict the Result
+        prediction = lg.predict(x_test)
+        
         acc = accuracy_score(y_test , prediction)
 
-        # Store the Accuracy in the List
-        models_acc.append(acc)
+        # Save the Model Metrics
+        mlflow.log_metric("Accuracy Score" , acc)
 
-    # Return the Models Accuracy
-    return models_acc
 

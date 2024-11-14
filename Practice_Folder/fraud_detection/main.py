@@ -1,13 +1,17 @@
 
 # Import the Important Modules & Functions
 from model_monitering import read_dataset , is_dataset_balance , convert_matrix , preprocessing , split_dataset , model_development
-
+import mlflow
 
 
 
 # Run the Main  (For the Runing Project)
 if __name__ == "__main__":
     
+    # Create the Experiment
+    mlflow.set_experiment("FraudDetection")
+
+
     # Define the DATASET PATH
     DATASET_PATH = "../Dataset/fraud_detection_dataset.csv"
     dataset      = read_dataset(DATASET_PATH)
@@ -28,7 +32,7 @@ if __name__ == "__main__":
     X , y = preprocessing(X , y)
 
     # Split the Dataset into Training & Testing 
-    x_train , y_train , x_test , y_test = split_dataset(X , y)
+    x_train , x_test , y_train , y_test = split_dataset(X , y)
     # # Display the Shape of the Training and Testing 
     # print(f"Here is the Shape of the X Train : {x_train.shape}")
     # print(f"Here is the Shape of the Y Train : {y_train.shape}")
@@ -36,7 +40,7 @@ if __name__ == "__main__":
     # print(f"Here is the Shape of the Y Test  : {y_test.shape}")
 
     # Development the Model in the Training & Testing Dataset
-    models_acc = model_development(x_train , y_train , x_test , y_test)
+    models_acc = model_development(x_train , x_test , y_train , y_test)
     # Display the Accuracy
     print(f"Here is the Accuracy of the Models : {models_acc}")
 

@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/MLFLOW/Practice_Folder/fraud_detection/mlruns/542223541027167999/8f34e03b37de431e9875329b89cf2d22/artifacts
+end_time: 1731616159588
+entry_point_name: ''
+experiment_id: '542223541027167999'
+lifecycle_stage: active
+run_id: 8f34e03b37de431e9875329b89cf2d22
+run_name: Logostic Regression
+run_uuid: 8f34e03b37de431e9875329b89cf2d22
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731616158826
+status: 3
+tags: []
+user_id: User26324

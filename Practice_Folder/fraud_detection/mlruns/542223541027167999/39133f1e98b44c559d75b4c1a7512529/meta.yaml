@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/MLFLOW/Practice_Folder/fraud_detection/mlruns/542223541027167999/39133f1e98b44c559d75b4c1a7512529/artifacts
+end_time: 1731616159327
+entry_point_name: ''
+experiment_id: '542223541027167999'
+lifecycle_stage: active
+run_id: 39133f1e98b44c559d75b4c1a7512529
+run_name: Y Train Dataset
+run_uuid: 39133f1e98b44c559d75b4c1a7512529
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731616159260
+status: 3
+tags: []
+user_id: User26324

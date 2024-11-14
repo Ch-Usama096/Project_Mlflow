@@ -1,1 +1,7 @@
-"" 
+# Add the Important Modules
+numpy 
+pandas
+seaborn
+matplotlib
+scikit-learn
+mlflow

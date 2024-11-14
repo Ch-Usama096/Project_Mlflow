@@ -1,8 +1,9 @@
 artifact_uri: file:///E:/MLFLOW/Practice_Folder/fraud_detection/mlruns/542223541027167999/36fd0dde8a2c451d95614b02f5e5a04b/artifacts
+deleted_time: 1731616044874
 end_time: 1731615618982
 entry_point_name: ''
 experiment_id: '542223541027167999'
-lifecycle_stage: active
+lifecycle_stage: deleted
 run_id: 36fd0dde8a2c451d95614b02f5e5a04b
 run_name: X Train Dataset
 run_uuid: 36fd0dde8a2c451d95614b02f5e5a04b
